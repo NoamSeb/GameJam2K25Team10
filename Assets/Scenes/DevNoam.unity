@@ -263,6 +263,10 @@ PrefabInstance:
       propertyPath: _lerpSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5788221502011940242, guid: f232af68b7be56e4b90eb70916f9c0b8, type: 3}
+      propertyPath: lifeLossGap
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5943621381468264194, guid: f232af68b7be56e4b90eb70916f9c0b8, type: 3}
       propertyPath: m_Name
       value: Lighter
