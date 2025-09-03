@@ -207,7 +207,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278837356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1148,8 +1148,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1131354458}
     - target: {fileID: 5788221502011940242, guid: f232af68b7be56e4b90eb70916f9c0b8, type: 3}
+      propertyPath: burningScore
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5788221502011940242, guid: f232af68b7be56e4b90eb70916f9c0b8, type: 3}
       propertyPath: damageGasQuantity
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5788221502011940242, guid: f232af68b7be56e4b90eb70916f9c0b8, type: 3}
+      propertyPath: lifeLossMultiplierProgress
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5943621381468264194, guid: f232af68b7be56e4b90eb70916f9c0b8, type: 3}
       propertyPath: m_Name
@@ -1184,6 +1192,7 @@ GameObject:
   - component: {fileID: 1541093561}
   - component: {fileID: 1541093560}
   - component: {fileID: 1541093559}
+  - component: {fileID: 1541093562}
   m_Layer: 0
   m_Name: ScoreCanvas
   m_TagString: Untagged
@@ -1274,6 +1283,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1541093562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541093557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c192cc9f09dd684587a8c6eba8d52b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 281159651}
 --- !u!1001 &1603141657
 PrefabInstance:
   m_ObjectHideFlags: 0

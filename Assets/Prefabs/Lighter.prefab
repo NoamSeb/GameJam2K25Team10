@@ -132,8 +132,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lerpSpeed: 25
   initialLife: 100
+  deathCanvas: {fileID: 0}
   lifeLossGap: 1
   gainGasQuantity: 0
+  damageGasQuantity: 0
   lifeLossMultiplierProgress: 0
   lifeBarUI: {fileID: 0}
 --- !u!1 &7233851925575656188
