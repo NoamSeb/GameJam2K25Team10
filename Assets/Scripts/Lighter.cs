@@ -1,6 +1,7 @@
+using System;
 using System.Collections;
-using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 
 public class Lighter : MonoBehaviour
@@ -8,22 +9,28 @@ public class Lighter : MonoBehaviour
     [Range(50f, 10f)] [SerializeField] private float lerpSpeed = 25f;
     private Vector2 _mousePosition;
 
-    [SerializeField] private float initialLife = 100f;
-
-    private float _life;
+    [Space] [Header("Lighter attributes")] [SerializeField]
+    private float initialLife = 100f;
 
     [SerializeField] private float lifeLossGap = 1f;
+    [SerializeField] private float gainGasQuantity;
+    [SerializeField] private float lifeLossMultiplierProgress;
+    [SerializeField] private Slider lifeBarUI;
+
+    private float _life;
+    private float _multiplier = 1f;
 
     private void Start()
     {
         _life = initialLife;
-        Debug.Log(initialLife + " life is " + _life);
         StartCoroutine(ReduceLife());
+        Cursor.visible = false;
     }
-    
+
     void Update()
     {
         UpdateLighterMovement();
+        _multiplier += Time.deltaTime*lifeLossMultiplierProgress;
     }
 
     private void UpdateLighterMovement()
@@ -40,15 +47,16 @@ public class Lighter : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
     IEnumerator ReduceLife()
     {
         while (true)
         {
-            _life -= lifeLossGap;
-            Debug.Log(_life);
+            _life -= lifeLossGap * _multiplier;
+            lifeBarUI.value = Mathf.Lerp(lifeBarUI.value, _life, 1f);
             CheckLife();
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSecondsRealtime(1);
         }
     }
+    
 }

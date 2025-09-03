@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Lighter
   - RopeSpawner
+  - Gas
   layers:
   - Default
   - TransparentFX
