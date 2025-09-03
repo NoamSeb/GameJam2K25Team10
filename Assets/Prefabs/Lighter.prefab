@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 7145658635398778591}
   - component: {fileID: 7879105118972807638}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: LighterSprite
   m_TagString: Lighter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
