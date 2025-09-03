@@ -25,6 +25,7 @@ public class RopeSpawner : MonoBehaviour
         RopeCheck();
     }
 
+    
     private void RopeCheck()
     {
         if (!currentRope && !bIsSpawningRope)
