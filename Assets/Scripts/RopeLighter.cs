@@ -8,6 +8,8 @@ public class RopeLighter : MonoBehaviour
     [SerializeField] private bool bIsLit = false;
     [SerializeField] private float lightingTime = 1.0f;
 
+    //[SerializeField] private bool bIsBadRope = false;
+
     void Update()
     {
         if (bIsLit)
@@ -27,6 +29,12 @@ public class RopeLighter : MonoBehaviour
             bIsLit = true;
             Debug.Log("Lit up");
 
+            if (gameObject.CompareTag("RopeBad"))
+            {
+                Lighter.Instance.TakeDamage();
+                Debug.Log("Removing Life");
+            }
+            
             Destroy(this.GameObject());
         }
     }

@@ -41,6 +41,16 @@ public class RopeSpawner : MonoBehaviour
 
         int ropeTypeIndex = Random.Range(0, ropeTypes.Length);
         GameObject newRope = Instantiate(ropeTypes[ropeTypeIndex], transform.position, Quaternion.identity);
+
+        if (newRope.GetComponent<RopeGood>())
+        {
+            newRope.gameObject.tag = "RopeGood";
+        }
+        else if (newRope.GetComponent<RopeBad>())
+        {
+            newRope.gameObject.tag = "RopeBad";
+        }
+        
         currentRope = newRope;
         bIsSpawningRope = false;
         
