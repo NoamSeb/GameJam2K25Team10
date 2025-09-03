@@ -7,7 +7,7 @@ using Debug = UnityEngine.Debug;
 public class Lighter : MonoBehaviour
 {
     [Range(50f, 10f)] [SerializeField] private float lerpSpeed = 25f;
-    private Vector2 _mousePosition;
+    private Vector3 _mousePosition;
 
     [Space] [Header("Lighter attributes")] [SerializeField]
     private float initialLife = 100f;
@@ -36,6 +36,7 @@ public class Lighter : MonoBehaviour
     private void UpdateLighterMovement()
     {
         _mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        _mousePosition.z = -50f;
         transform.position = Vector2.Lerp(transform.position, _mousePosition, lerpSpeed * Time.deltaTime);
     }
 
