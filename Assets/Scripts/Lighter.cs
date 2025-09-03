@@ -24,6 +24,7 @@ public class Lighter : MonoBehaviour
     {
         _life = initialLife;
         StartCoroutine(ReduceLife());
+        Cursor.visible = false;
     }
 
     void Update()
