@@ -15,16 +15,11 @@ public class RopeSpawner : MonoBehaviour
     
     [Header("Check Values")]
     [SerializeField] private bool bHasRope = false;
-    private bool bIsSpawningRope = false;
+    [SerializeField] private bool bIsSpawningRope = false;
 
     [Header("Respawn Values")]
     [Range(0.1f, 10.0f)]
     [SerializeField] private float respawnTime = 1.0f;
-    
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
