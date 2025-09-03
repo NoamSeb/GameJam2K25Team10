@@ -14,7 +14,6 @@ public class RopeSpawner : MonoBehaviour
     [SerializeField] private GameObject[] ropeTypes;
     
     [Header("Check Values")]
-    [SerializeField] private bool bHasRope = false;
     [SerializeField] private bool bIsSpawningRope = false;
 
     [Header("Respawn Values")]
@@ -28,7 +27,6 @@ public class RopeSpawner : MonoBehaviour
 
     private void RopeCheck()
     {
-        // Si null, il n'y a pas de rope
         if (!currentRope && !bIsSpawningRope)
         {
             StartCoroutine(SpawnNewRope());
