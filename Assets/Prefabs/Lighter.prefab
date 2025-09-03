@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lerpSpeed: 25
+  initialLife: 100
+  lifeLossGap: 1
 --- !u!1 &7233851925575656188
 GameObject:
   m_ObjectHideFlags: 0
