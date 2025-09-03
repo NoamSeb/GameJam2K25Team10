@@ -170,8 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundImage: {fileID: 278837359}
-  baseBackgroundImage: {fileID: 3264735950067345352, guid: 4e9fad529d8897d49b5b02ec04a82a6a, type: 3}
-  konamiBackgroundImage: {fileID: 7268306366039227219, guid: e10080cb1f4dbdb4bb8cb8840c87e92a, type: 3}
+  baseBackgroundImage: {fileID: 21300000, guid: 61f75fc656228db4f86d816525c31694, type: 3}
+  konamiBackgroundImage: {fileID: 6920471516172454025, guid: 2b057e0b5191df441a0a4760bafca2e5, type: 3}
 --- !u!114 &278837359
 MonoBehaviour:
   m_ObjectHideFlags: 0
