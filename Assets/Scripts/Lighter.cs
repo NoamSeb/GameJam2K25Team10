@@ -28,6 +28,10 @@ public class Lighter : MonoBehaviour
 
     private int _score = 0;
     public int Score => _score;
+
+    private int _scoreStreak;
+    [SerializeField] private int unlockScoreStreak;
+    public bool _isScoreStreakAvailable = false;
     
     private void Awake()
     {
@@ -54,7 +58,12 @@ public class Lighter : MonoBehaviour
     {
         UpdateLighterMovement();
         _multiplier += Time.deltaTime*lifeLossMultiplierProgress;
+        if (Input.GetMouseButtonDown(1))
+        {
+            UseScoreStreak();
+        }
     }
+    
 
     private void UpdateLighterMovement()
     {
@@ -104,5 +113,22 @@ public class Lighter : MonoBehaviour
             _life = 100.0f;
         }
     }
+
+    public void AddScoreStreak()
+    {
+        _scoreStreak++;
+        if (_scoreStreak >= unlockScoreStreak)
+            _isScoreStreakAvailable = true;
+    }
+
+    public void ResetScoreStreak()
+    {
+        _scoreStreak = 0;
+    }
     
+    private void UseScoreStreak()
+    {
+        ResetScoreStreak();
+        _isScoreStreakAvailable = false;
+    }
 }
