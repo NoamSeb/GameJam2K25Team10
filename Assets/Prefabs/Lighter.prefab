@@ -138,6 +138,7 @@ MonoBehaviour:
   damageGasQuantity: 0
   lifeLossMultiplierProgress: 0
   lifeBarUI: {fileID: 0}
+  burningScore: 0
 --- !u!1 &7233851925575656188
 GameObject:
   m_ObjectHideFlags: 0

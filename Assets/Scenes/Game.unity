@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: respawnTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
+      propertyPath: goodSpawnChance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7725342668462768639, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_Name
       value: RopeSpawner (3)
@@ -420,6 +424,10 @@ PrefabInstance:
     - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: respawnTime
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
+      propertyPath: goodSpawnChance
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7725342668462768639, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_Name
@@ -1308,6 +1316,10 @@ PrefabInstance:
       propertyPath: respawnTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
+      propertyPath: goodSpawnChance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7725342668462768639, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_Name
       value: RopeSpawner (5)
@@ -1368,6 +1380,10 @@ PrefabInstance:
     - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: respawnTime
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
+      propertyPath: goodSpawnChance
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7725342668462768639, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_Name
@@ -1566,6 +1582,10 @@ PrefabInstance:
       propertyPath: respawnTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
+      propertyPath: goodSpawnChance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7725342668462768639, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_Name
       value: RopeSpawner (2)
@@ -1626,6 +1646,10 @@ PrefabInstance:
     - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: respawnTime
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
+      propertyPath: goodSpawnChance
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7725342668462768639, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_Name
