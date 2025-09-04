@@ -217,6 +217,8 @@ MonoBehaviour:
   bHasBeenLit: 0
   bIsBeingLit: 0
   life: 0
+  fallTime: 2
+  fallDistance: -5
 --- !u!114 &452103864307867634
 MonoBehaviour:
   m_ObjectHideFlags: 0

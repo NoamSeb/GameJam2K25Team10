@@ -167,6 +167,8 @@ MonoBehaviour:
   bHasBeenLit: 0
   bIsBeingLit: 0
   life: 100
+  fallTime: 1
+  fallDistance: -5
 --- !u!1 &7116124912124925165
 GameObject:
   m_ObjectHideFlags: 0
