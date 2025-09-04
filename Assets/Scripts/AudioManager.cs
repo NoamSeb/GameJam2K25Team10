@@ -25,6 +25,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip BombSfx;
     public AudioClip JerryCanSfx;
     public AudioClip GasSfx;
+    public AudioClip SlashSfx;
 
     private void Awake()
     {

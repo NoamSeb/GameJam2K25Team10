@@ -55,7 +55,7 @@ public class RopeBase : MonoBehaviour
     private IEnumerator GoingUp()
     {
         float timesSinceStart = 0.0f;
-        Vector2 targetPosition = new Vector2(transform.position.x, transform.position.y - fallDistance);
+        Vector2 targetPosition = new Vector2(transform.position.x, transform.position.y - (fallDistance-10));
 
         while (timesSinceStart <= fallTime)
         {

@@ -1650,6 +1650,7 @@ MonoBehaviour:
   BombSfx: {fileID: 8300000, guid: 8864d8be2d01fa748a0faf8134c46352, type: 3}
   JerryCanSfx: {fileID: 8300000, guid: c6591f0700107f847b724ad4dcdedd0c, type: 3}
   GasSfx: {fileID: 8300000, guid: 7424bec86e563464e8cd4371737fc59c, type: 3}
+  SlashSfx: {fileID: 8300000, guid: 277aa7b52d55e764dba28398b00c3e0c, type: 3}
 --- !u!1 &1984425641
 GameObject:
   m_ObjectHideFlags: 0
