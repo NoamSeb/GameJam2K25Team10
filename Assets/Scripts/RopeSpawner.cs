@@ -68,6 +68,5 @@ public class RopeSpawner : MonoBehaviour
         currentRope = newRope;
         bIsSpawningRope = false;
         
-        Debug.Log("Spawned: " + newRope.GetType().Name);
     }
 }

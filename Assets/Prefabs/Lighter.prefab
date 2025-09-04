@@ -139,6 +139,11 @@ MonoBehaviour:
   lifeLossMultiplierProgress: 0
   lifeBarUI: {fileID: 0}
   burningScore: 0
+  animator: {fileID: 7145658635398778591}
+  spriteLight2D: {fileID: 7233851925575656188}
+  Light2D: {fileID: 1171304910313106591}
+  unlockScoreStreak: 0
+  _isScoreStreakAvailable: 0
 --- !u!1 &7233851925575656188
 GameObject:
   m_ObjectHideFlags: 0

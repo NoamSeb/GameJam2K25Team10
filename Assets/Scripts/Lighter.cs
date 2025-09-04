@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 
 public class Lighter : MonoBehaviour
 {
     public static Lighter Instance;
-    
+
     [Range(50f, 10f)] [SerializeField] private float lerpSpeed = 25f;
     private Vector3 _mousePosition;
 
@@ -22,8 +23,14 @@ public class Lighter : MonoBehaviour
     [SerializeField] private float lifeLossMultiplierProgress;
     [SerializeField] private Slider lifeBarUI;
     [SerializeField] private int burningScore;
+    [SerializeField] private Animator animator;
 
-    private float _life;
+    [Header("UI elements")] [SerializeField]
+    private GameObject spriteLight2D;
+
+    [SerializeField] private GameObject Light2D;
+    [Space] private float _life;
+    public float Life => _life;
     private float _multiplier = 1f;
 
     private int _score = 0;
@@ -31,15 +38,18 @@ public class Lighter : MonoBehaviour
 
     private int _scoreStreak;
     [SerializeField] private int unlockScoreStreak;
+    [SerializeField] private GameObject JerrycanAbilityCanvas;
     public bool _isScoreStreakAvailable = false;
-    
+
+    private bool IsJerrycanChanceIncreased = false;
+    private bool IsJerrycanAbilityAvailable = true;
+
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-
         }
         else
         {
@@ -50,21 +60,40 @@ public class Lighter : MonoBehaviour
     private void Start()
     {
         _life = initialLife;
-        StartCoroutine(ReduceLife());
         Cursor.visible = false;
         AudioManager.Instance.PlaySFX(AudioManager.Instance.GasSfx);
+
+        if (DNDOL.Instance.bKonami)
+        {
+            Light2D.SetActive(true);
+            spriteLight2D.GetComponent<Light2D>().enabled = true;
+        }
     }
 
     void Update()
     {
         UpdateLighterMovement();
-        _multiplier += Time.deltaTime*lifeLossMultiplierProgress;
+        ReduceLife();
+        _multiplier += Time.deltaTime * lifeLossMultiplierProgress;
+        if (Input.GetMouseButtonDown(0))
+        {
+            StartCoroutine(UseGasAbility());
+        }
+
         if (Input.GetMouseButtonDown(1))
         {
             UseScoreStreak();
         }
+
+        if (IsJerrycanAbilityAvailable)
+        {
+            JerrycanAbilityCanvas.SetActive(true);
+        }
+        else
+        {
+            JerrycanAbilityCanvas.SetActive(false);
+        }
     }
-    
 
     private void UpdateLighterMovement()
     {
@@ -75,6 +104,26 @@ public class Lighter : MonoBehaviour
 
     private void CheckLife()
     {
+        if (_life > 30f)
+        {
+            if (IsJerrycanChanceIncreased)
+            {
+                IsJerrycanChanceIncreased = false;
+                JerricanGenerator.Instance.JerrycanSpawnChance += 20;
+                Debug.Log(JerricanGenerator.Instance.JerrycanSpawnChance);
+            }
+        }
+
+        if (_life <= 30f)
+        {
+            if (!IsJerrycanChanceIncreased)
+            {
+                IsJerrycanChanceIncreased = true;
+                JerricanGenerator.Instance.JerrycanSpawnChance -= 20;
+                Debug.Log(JerricanGenerator.Instance.JerrycanSpawnChance);
+            }
+        }
+
         if (_life <= 0f)
         {
             Debug.Log("Game Over !");
@@ -84,20 +133,15 @@ public class Lighter : MonoBehaviour
         }
     }
 
-    IEnumerator ReduceLife()
+    private void ReduceLife()
     {
-        while (true)
-        {
-            _life -= lifeLossGap * _multiplier;
-            lifeBarUI.value = Mathf.Lerp(lifeBarUI.value, _life, 1f);
-            CheckLife();
-            yield return new WaitForSecondsRealtime(1);
-        }
+        _life -= lifeLossGap * _multiplier * Time.deltaTime;
+        lifeBarUI.value = Mathf.Lerp(lifeBarUI.value, _life, 1f);
+        CheckLife();
     }
 
     public void TakeDamage()
     {
-        Debug.Log("Lost some life");
         _life -= damageGasQuantity;
     }
 
@@ -126,15 +170,17 @@ public class Lighter : MonoBehaviour
     {
         _scoreStreak = 0;
     }
-    
+
     private void UseScoreStreak()
     {
+        animator.SetTrigger("Slash");
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.SlashSfx);
         ResetScoreStreak();
         _isScoreStreakAvailable = false;
-        
+
         GameObject[] badRopesToKill = GameObject.FindGameObjectsWithTag("RopeBad");
         GameObject[] goodRopesToKill = GameObject.FindGameObjectsWithTag("RopeGood");
-        
+
         foreach (GameObject badRope in badRopesToKill)
         {
             Destroy(badRope);
@@ -143,6 +189,17 @@ public class Lighter : MonoBehaviour
         foreach (GameObject goodRope in goodRopesToKill)
         {
             Destroy(goodRope);
+        }
+    }
+
+    private IEnumerator UseGasAbility()
+    {
+        if (IsJerrycanAbilityAvailable)
+        {
+            AddGas();
+            IsJerrycanAbilityAvailable = false;
+            yield return new WaitForSeconds(20f);
+            IsJerrycanAbilityAvailable = true;
         }
     }
 }

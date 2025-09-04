@@ -29,19 +29,16 @@ public class RopeLighter : MonoBehaviour
         if (lightingTime <= 0.0f)
         {
             bIsLit = true;
-            Debug.Log("Lit up");
 
             if (gameObject.CompareTag("RopeBad"))
             {
                 Lighter.Instance.TakeDamage();
                 Lighter.Instance.ResetScoreStreak();
-                Debug.Log("Removing Life");
             }
             else
             {
                 Lighter.Instance.AddScore();
                 Lighter.Instance.AddScoreStreak();
-                Debug.Log("Score Increased !");
 
                 if (GetComponent<JerricanGenerator>().bHasJerrycan)
                 {
@@ -59,8 +56,7 @@ public class RopeLighter : MonoBehaviour
         {
             return;
         }
-
-        Debug.Log("Entered");
+        
         bIsBeingLit = true;
     }
 
@@ -70,8 +66,7 @@ public class RopeLighter : MonoBehaviour
         {
             return;
         }
-
-        Debug.Log("Left");
+        
         bIsBeingLit = false;
     }
 
