@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: respawnTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
+      propertyPath: goodSpawnChance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7725342668462768639, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_Name
       value: RopeSpawner (3)
@@ -232,7 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundImage: {fileID: 278837359}
   baseBackgroundImage: {fileID: 21300000, guid: 61f75fc656228db4f86d816525c31694, type: 3}
-  konamiBackgroundImage: {fileID: 6920471516172454025, guid: 2b057e0b5191df441a0a4760bafca2e5, type: 3}
+  konamiBackgroundImage: {fileID: 6157337734328213919, guid: b6be14fcba6548d448d9ebb8628074e3, type: 3}
 --- !u!114 &278837359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,7 +309,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -420, y: -25}
+  m_AnchoredPosition: {x: -420, y: -45}
   m_SizeDelta: {x: 800, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &281159651
@@ -332,8 +336,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a9516352f425bb040b8e4f3c4a23457a, type: 2}
+  m_sharedMaterial: {fileID: 4832505005349931376, guid: a9516352f425bb040b8e4f3c4a23457a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -420,6 +424,10 @@ PrefabInstance:
     - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: respawnTime
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
+      propertyPath: goodSpawnChance
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7725342668462768639, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_Name
@@ -787,7 +795,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Restart
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a9516352f425bb040b8e4f3c4a23457a, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -853,7 +861,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1027827488
@@ -1308,6 +1316,10 @@ PrefabInstance:
       propertyPath: respawnTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
+      propertyPath: goodSpawnChance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7725342668462768639, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_Name
       value: RopeSpawner (5)
@@ -1369,6 +1381,10 @@ PrefabInstance:
       propertyPath: respawnTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
+      propertyPath: goodSpawnChance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7725342668462768639, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_Name
       value: RopeSpawner (1)
@@ -1429,6 +1445,10 @@ PrefabInstance:
     - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: respawnTime
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
+      propertyPath: goodSpawnChance
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7725342668462768639, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_Name
@@ -1566,6 +1586,10 @@ PrefabInstance:
       propertyPath: respawnTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
+      propertyPath: goodSpawnChance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7725342668462768639, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_Name
       value: RopeSpawner (2)
@@ -1626,6 +1650,10 @@ PrefabInstance:
     - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: respawnTime
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
+      propertyPath: goodSpawnChance
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7725342668462768639, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_Name

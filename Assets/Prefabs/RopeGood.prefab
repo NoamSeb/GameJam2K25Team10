@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bIsBeingLit: 0
   bIsLit: 0
-  lightingTime: 1
+  lightingTime: 0.4
 --- !u!61 &118382385975158141
 BoxCollider2D:
   m_ObjectHideFlags: 0

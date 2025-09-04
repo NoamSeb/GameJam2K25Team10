@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -28,7 +30,6 @@ public class RopeLighter : MonoBehaviour
         {
             bIsLit = true;
             Debug.Log("Lit up");
-            GetComponentInChildren<Animator>().SetBool("IsBurning", true);
 
             if (gameObject.CompareTag("RopeBad"))
             {
@@ -39,8 +40,8 @@ public class RopeLighter : MonoBehaviour
             {
                 Lighter.Instance.AddScore();
                 Debug.Log("Score Increased !");
-            } 
-            Destroy(this.GameObject());
+            }
+            StartCoroutine(WaitFire());
         }
     }
 
@@ -64,5 +65,12 @@ public class RopeLighter : MonoBehaviour
 
         Debug.Log("Left");
         bIsBeingLit = false;
+    }
+
+    IEnumerator WaitFire()
+    {
+        GetComponentInChildren<Animator>().SetTrigger("IsBurning");
+        yield return new WaitForSecondsRealtime(0.65f);
+        Destroy(this.GameObject());
     }
 }
