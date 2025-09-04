@@ -21,9 +21,13 @@ public class Lighter : MonoBehaviour
     [SerializeField] private float damageGasQuantity;
     [SerializeField] private float lifeLossMultiplierProgress;
     [SerializeField] private Slider lifeBarUI;
+    [SerializeField] private int burningScore;
 
     private float _life;
     private float _multiplier = 1f;
+
+    private int _score = 0;
+    public int Score => _score;
     
     private void Awake()
     {
@@ -85,6 +89,11 @@ public class Lighter : MonoBehaviour
     {
         Debug.Log("Lost some life");
         _life -= damageGasQuantity;
+    }
+
+    public void AddScore()
+    {
+        _score += burningScore;
     }
     
 }

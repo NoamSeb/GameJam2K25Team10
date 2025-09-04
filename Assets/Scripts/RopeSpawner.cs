@@ -19,6 +19,10 @@ public class RopeSpawner : MonoBehaviour
     [Header("Respawn Values")]
     [Range(0.1f, 10.0f)]
     [SerializeField] private float respawnTime = 1.0f;
+    
+    [Header("Ropes Sprites")]
+    [SerializeField] private Sprite[] goodRopesSprite;
+    [SerializeField] private Sprite[] badRopesSprite;
 
     void Update()
     {
@@ -45,10 +49,12 @@ public class RopeSpawner : MonoBehaviour
         if (newRope.GetComponent<RopeGood>())
         {
             newRope.gameObject.tag = "RopeGood";
+            newRope.GetComponent<SpriteRenderer>().sprite = goodRopesSprite[Random.Range(0, goodRopesSprite.Length)];
         }
         else if (newRope.GetComponent<RopeBad>())
         {
             newRope.gameObject.tag = "RopeBad";
+            newRope.GetComponent<SpriteRenderer>().sprite = badRopesSprite[Random.Range(0, badRopesSprite.Length)];
         }
         
         currentRope = newRope;
