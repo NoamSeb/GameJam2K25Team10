@@ -232,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundImage: {fileID: 278837359}
   baseBackgroundImage: {fileID: 21300000, guid: 61f75fc656228db4f86d816525c31694, type: 3}
-  konamiBackgroundImage: {fileID: 6920471516172454025, guid: 2b057e0b5191df441a0a4760bafca2e5, type: 3}
+  konamiBackgroundImage: {fileID: 6157337734328213919, guid: b6be14fcba6548d448d9ebb8628074e3, type: 3}
 --- !u!114 &278837359
 MonoBehaviour:
   m_ObjectHideFlags: 0
