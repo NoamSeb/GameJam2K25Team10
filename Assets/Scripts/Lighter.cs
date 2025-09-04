@@ -6,19 +6,42 @@ using Debug = UnityEngine.Debug;
 
 public class Lighter : MonoBehaviour
 {
+    public static Lighter Instance;
+    
     [Range(50f, 10f)] [SerializeField] private float lerpSpeed = 25f;
-    private Vector2 _mousePosition;
+    private Vector3 _mousePosition;
 
     [Space] [Header("Lighter attributes")] [SerializeField]
     private float initialLife = 100f;
 
+    [SerializeField] private Canvas deathCanvas;
+
     [SerializeField] private float lifeLossGap = 1f;
     [SerializeField] private float gainGasQuantity;
+    [SerializeField] private float damageGasQuantity;
     [SerializeField] private float lifeLossMultiplierProgress;
     [SerializeField] private Slider lifeBarUI;
+    [SerializeField] private int burningScore;
 
     private float _life;
     private float _multiplier = 1f;
+
+    private int _score = 0;
+    public int Score => _score;
+    
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {
@@ -36,6 +59,7 @@ public class Lighter : MonoBehaviour
     private void UpdateLighterMovement()
     {
         _mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        _mousePosition.z = -50f;
         transform.position = Vector2.Lerp(transform.position, _mousePosition, lerpSpeed * Time.deltaTime);
     }
 
@@ -44,6 +68,8 @@ public class Lighter : MonoBehaviour
         if (_life <= 0f)
         {
             Debug.Log("Game Over !");
+            deathCanvas.gameObject.SetActive(true);
+            Cursor.visible = true;
             Destroy(gameObject);
         }
     }
@@ -57,6 +83,17 @@ public class Lighter : MonoBehaviour
             CheckLife();
             yield return new WaitForSecondsRealtime(1);
         }
+    }
+
+    public void TakeDamage()
+    {
+        Debug.Log("Lost some life");
+        _life -= damageGasQuantity;
+    }
+
+    public void AddScore()
+    {
+        _score += burningScore;
     }
     
 }

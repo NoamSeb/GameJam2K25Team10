@@ -132,8 +132,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lerpSpeed: 25
   initialLife: 100
+  deathCanvas: {fileID: 0}
   lifeLossGap: 1
   gainGasQuantity: 0
+  damageGasQuantity: 0
   lifeLossMultiplierProgress: 0
   lifeBarUI: {fileID: 0}
 --- !u!1 &7233851925575656188
@@ -149,6 +151,7 @@ GameObject:
   - component: {fileID: 4935237866838548088}
   - component: {fileID: 7145658635398778591}
   - component: {fileID: 7879105118972807638}
+  - component: {fileID: 302592493648395081}
   m_Layer: 0
   m_Name: LighterSprite
   m_TagString: Lighter
@@ -337,3 +340,30 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!50 &302592493648395081
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7233851925575656188}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
