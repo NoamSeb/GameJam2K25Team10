@@ -21,6 +21,7 @@ public class RopeSpawner : MonoBehaviour
     [SerializeField] private float respawnTime = 1.0f;
 
     [Header("Chance Values")]
+    [Range(0, 100)]
     [SerializeField] private int goodSpawnChance = 100;
     
     [Header("Ropes Sprites")]
