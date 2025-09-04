@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bHasJerrycan: 0
-  jerrycanSpawnChance: 15
+  jerrycanSpawnChance: 85
   jerrycanSprites:
   - {fileID: 21300000, guid: 4cb2d38a245be634ab0656b16ca829e5, type: 3}
   - {fileID: 21300000, guid: b313df1931298194ca9a80c92add73e7, type: 3}

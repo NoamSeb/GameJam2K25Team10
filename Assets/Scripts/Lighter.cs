@@ -109,7 +109,7 @@ public class Lighter : MonoBehaviour
             if (IsJerrycanChanceIncreased)
             {
                 IsJerrycanChanceIncreased = false;
-                JerricanGenerator.Instance.JerrycanSpawnChance -= 10;
+                JerricanGenerator.Instance.JerrycanSpawnChance += 20;
                 Debug.Log(JerricanGenerator.Instance.JerrycanSpawnChance);
             }
         }
@@ -119,7 +119,7 @@ public class Lighter : MonoBehaviour
             if (!IsJerrycanChanceIncreased)
             {
                 IsJerrycanChanceIncreased = true;
-                JerricanGenerator.Instance.JerrycanSpawnChance += 10;
+                JerricanGenerator.Instance.JerrycanSpawnChance -= 20;
                 Debug.Log(JerricanGenerator.Instance.JerrycanSpawnChance);
             }
         }
