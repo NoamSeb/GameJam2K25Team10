@@ -19,6 +19,10 @@ public class RopeSpawner : MonoBehaviour
     [Header("Respawn Values")]
     [Range(0.1f, 10.0f)]
     [SerializeField] private float respawnTime = 1.0f;
+
+    [Header("Chance Values")]
+    [Range(0, 100)]
+    [SerializeField] private int goodSpawnChance = 100;
     
     [Header("Ropes Sprites")]
     [SerializeField] private Sprite[] goodRopesSprite;
@@ -43,8 +47,12 @@ public class RopeSpawner : MonoBehaviour
         bIsSpawningRope = true;
         yield return new WaitForSeconds(respawnTime);
 
-        int ropeTypeIndex = Random.Range(0, ropeTypes.Length);
-        GameObject newRope = Instantiate(ropeTypes[ropeTypeIndex], transform.position, Quaternion.identity);
+        GameObject ropeChoice;
+
+        int ropeTypeIndex = Random.Range(0, 100);
+        ropeChoice = ropeTypeIndex >= goodSpawnChance ? ropeTypes[0] : ropeTypes[1];
+        
+        GameObject newRope = Instantiate(ropeChoice, transform.position, Quaternion.identity);
 
         if (newRope.GetComponent<RopeGood>())
         {

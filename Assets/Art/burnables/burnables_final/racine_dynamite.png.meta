@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6b70088f49dfb1c4da3d83c8cdb93d92
+guid: d4efcc53f4d786a469dc6866af2f83bf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5346013442715778734
-    second: serpent_0
+      213: -890710742915556948
+    second: racine_dynamite_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 500
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,43 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: serpent_0
+      name: racine_dynamite_0
       rect:
         serializedVersion: 2
-        x: 498
-        y: 250
-        width: 722
-        height: 2550
+        x: 333
+        y: 768
+        width: 1252
+        height: 2032
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eae7989d6ead03a40800000000000000
-      internalID: 5346013442715778734
+      spriteID: ca9d4ea6c4f83a3f0800000000000000
+      internalID: -890710742915556948
       vertices: []
       indices: 
       edges: []
@@ -161,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      serpent_0: 5346013442715778734
+      racine_dynamite_0: -890710742915556948
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
