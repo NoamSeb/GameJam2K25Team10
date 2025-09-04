@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fb478af517afec942a14ef4e161e53b3
+guid: d4efcc53f4d786a469dc6866af2f83bf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1478775196362488206
-    second: MainMenuImage_0
+      213: -890710742915556948
+    second: racine_dynamite_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MainMenuImage_0
+      name: racine_dynamite_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 333
+        y: 768
+        width: 1252
+        height: 2032
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 276c7263bc55a7be0800000000000000
-      internalID: -1478775196362488206
+      spriteID: ca9d4ea6c4f83a3f0800000000000000
+      internalID: -890710742915556948
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      MainMenuImage_0: -1478775196362488206
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
