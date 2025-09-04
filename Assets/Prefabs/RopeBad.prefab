@@ -105,7 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bIsBeingLit: 0
   bIsLit: 0
-  lightingTime: 1
+  lightingTime: 0.4
 --- !u!61 &5566560305331307621
 BoxCollider2D:
   m_ObjectHideFlags: 0
