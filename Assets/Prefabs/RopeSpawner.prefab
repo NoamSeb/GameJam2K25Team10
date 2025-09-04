@@ -52,9 +52,13 @@ MonoBehaviour:
   - {fileID: 6248408405820543536, guid: 0dddd8d5037b42e4ea73636c51d1eb83, type: 3}
   bIsSpawningRope: 0
   respawnTime: 0.1
+  goodSpawnChance: 100
   goodRopesSprite:
-  - {fileID: 5889287224946676233, guid: ec4ec673d16e1fc449b73f8ffffc7a1e, type: 3}
-  - {fileID: 6418694092473086359, guid: 5ce2e39c4a5abd04ca75cbb9e9a72926, type: 3}
-  - {fileID: -3150696313439497364, guid: 75cb01f7a836a864798e10599c491377, type: 3}
+  - {fileID: 21300000, guid: fbb11fe7ec7608946ab18797e3d618fd, type: 3}
+  - {fileID: 21300000, guid: 13e8f85ba5128ce4aac23665a744fa8b, type: 3}
+  - {fileID: 21300000, guid: 0c103499d1ac0f544aa1ed83953414d9, type: 3}
   badRopesSprite:
-  - {fileID: 5346013442715778734, guid: 6b70088f49dfb1c4da3d83c8cdb93d92, type: 3}
+  - {fileID: 21300000, guid: b4801bd95a60afb49a405cc780e63d16, type: 3}
+  - {fileID: 21300000, guid: d4efcc53f4d786a469dc6866af2f83bf, type: 3}
+  - {fileID: 21300000, guid: 75bbce1853a5f294f804ca809d07157e, type: 3}
+  - {fileID: 21300000, guid: b16fe5d0b25369f48be3aaed000e165d, type: 3}
