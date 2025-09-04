@@ -34,11 +34,13 @@ public class RopeLighter : MonoBehaviour
             if (gameObject.CompareTag("RopeBad"))
             {
                 Lighter.Instance.TakeDamage();
+                Lighter.Instance.ResetScoreStreak();
                 Debug.Log("Removing Life");
             }
             else
             {
                 Lighter.Instance.AddScore();
+                Lighter.Instance.AddScoreStreak();
                 Debug.Log("Score Increased !");
 
                 if (GetComponent<JerricanGenerator>().bHasJerrycan)
