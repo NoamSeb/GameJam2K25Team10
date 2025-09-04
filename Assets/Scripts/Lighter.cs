@@ -130,5 +130,18 @@ public class Lighter : MonoBehaviour
     {
         ResetScoreStreak();
         _isScoreStreakAvailable = false;
+        
+        GameObject[] badRopesToKill = GameObject.FindGameObjectsWithTag("RopeBad");
+        GameObject[] goodRopesToKill = GameObject.FindGameObjectsWithTag("RopeGood");
+        
+        foreach (GameObject badRope in badRopesToKill)
+        {
+            Destroy(badRope);
+        }
+
+        foreach (GameObject goodRope in goodRopesToKill)
+        {
+            Destroy(goodRope);
+        }
     }
 }
