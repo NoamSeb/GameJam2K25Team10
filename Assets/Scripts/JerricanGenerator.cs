@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class JerricanGenerator : MonoBehaviour
 {
-    [SerializeField] private bool bHasJerrycan;
+    public bool bHasJerrycan;
     [Range(0, 100)] [SerializeField] private int jerrycanSpawnChance;
     
     [Header("Ropes Sprites")]
-    [SerializeField] private Sprite jerrycanSprite;
+    [SerializeField] private Sprite[] jerrycanSprites;
     
     void Start()
     {
@@ -18,6 +18,6 @@ public class JerricanGenerator : MonoBehaviour
             return;
         }
 
-        GetComponent<SpriteRenderer>().sprite = jerrycanSprite;
+        GetComponent<SpriteRenderer>().sprite = jerrycanSprites[Random.Range(0, jerrycanSprites.Length)];
     }
 }

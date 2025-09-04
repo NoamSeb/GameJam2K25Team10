@@ -95,5 +95,14 @@ public class Lighter : MonoBehaviour
     {
         _score += burningScore;
     }
+
+    public void AddGas()
+    {
+        _life += gainGasQuantity;
+        if (_life >= 100.0f)
+        {
+            _life = 100.0f;
+        }
+    }
     
 }
