@@ -38,10 +38,11 @@ public class Lighter : MonoBehaviour
 
     private int _scoreStreak;
     [SerializeField] private int unlockScoreStreak;
+    [SerializeField] private GameObject JerrycanAbilityCanvas;
     public bool _isScoreStreakAvailable = false;
 
-    // JerricanGenerator jerricanGenerator = new JerricanGenerator();
     private bool IsJerrycanChanceIncreased = false;
+    private bool IsJerrycanAbilityAvailable = true;
 
     private void Awake()
     {
@@ -74,12 +75,25 @@ public class Lighter : MonoBehaviour
         UpdateLighterMovement();
         ReduceLife();
         _multiplier += Time.deltaTime * lifeLossMultiplierProgress;
+        if (Input.GetMouseButtonDown(0))
+        {
+            StartCoroutine(UseGasAbility());
+        }
+
         if (Input.GetMouseButtonDown(1))
         {
             UseScoreStreak();
         }
-    }
 
+        if (IsJerrycanAbilityAvailable)
+        {
+            JerrycanAbilityCanvas.SetActive(true);
+        }
+        else
+        {
+            JerrycanAbilityCanvas.SetActive(false);
+        }
+    }
 
     private void UpdateLighterMovement()
     {
@@ -95,10 +109,11 @@ public class Lighter : MonoBehaviour
             if (IsJerrycanChanceIncreased)
             {
                 IsJerrycanChanceIncreased = false;
-                // JerricanGenerator.Instance.JerrycanSpawnChance -= 10;
+                JerricanGenerator.Instance.JerrycanSpawnChance -= 10;
                 Debug.Log(JerricanGenerator.Instance.JerrycanSpawnChance);
             }
-        } 
+        }
+
         if (_life <= 30f)
         {
             if (!IsJerrycanChanceIncreased)
@@ -108,6 +123,7 @@ public class Lighter : MonoBehaviour
                 Debug.Log(JerricanGenerator.Instance.JerrycanSpawnChance);
             }
         }
+
         if (_life <= 0f)
         {
             Debug.Log("Game Over !");
@@ -173,6 +189,17 @@ public class Lighter : MonoBehaviour
         foreach (GameObject goodRope in goodRopesToKill)
         {
             Destroy(goodRope);
+        }
+    }
+
+    private IEnumerator UseGasAbility()
+    {
+        if (IsJerrycanAbilityAvailable)
+        {
+            AddGas();
+            IsJerrycanAbilityAvailable = false;
+            yield return new WaitForSeconds(20f);
+            IsJerrycanAbilityAvailable = true;
         }
     }
 }
