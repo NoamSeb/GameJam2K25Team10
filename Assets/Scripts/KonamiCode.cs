@@ -23,6 +23,7 @@ public class KonamiCode : MonoBehaviour
                 {
                     Debug.Log("Konami code activated!");
                     DNDOL.Instance.bKonami = true;
+                    AudioManager.Instance.sfxAudioSource.PlayOneShot(AudioManager.Instance.konamiValidatedSfx);
                     currentIndex = 0;
                 }
             }
