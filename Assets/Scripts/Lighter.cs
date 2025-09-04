@@ -52,6 +52,7 @@ public class Lighter : MonoBehaviour
         _life = initialLife;
         StartCoroutine(ReduceLife());
         Cursor.visible = false;
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.GasSfx);
     }
 
     void Update()

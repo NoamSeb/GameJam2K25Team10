@@ -1646,6 +1646,10 @@ MonoBehaviour:
   gameplayMusic: {fileID: 8300000, guid: 4b1970e2c0e7a484b943713b334ec256, type: 3}
   konamiMusic: {fileID: 8300000, guid: eed0ad20a93187c49850bb31c46eb628, type: 3}
   konamiValidatedSfx: {fileID: 8300000, guid: cf194c5bc4310f04e89fb2f38fd1c0d3, type: 3}
+  FireSfx: {fileID: 8300000, guid: f69b27684946ec0449c4a75501d2d32b, type: 3}
+  BombSfx: {fileID: 8300000, guid: 8864d8be2d01fa748a0faf8134c46352, type: 3}
+  JerryCanSfx: {fileID: 8300000, guid: c6591f0700107f847b724ad4dcdedd0c, type: 3}
+  GasSfx: {fileID: 8300000, guid: 7424bec86e563464e8cd4371737fc59c, type: 3}
 --- !u!1 &1984425641
 GameObject:
   m_ObjectHideFlags: 0

@@ -46,6 +46,7 @@ public class RopeLighter : MonoBehaviour
                 if (GetComponent<JerricanGenerator>().bHasJerrycan)
                 {
                     Lighter.Instance.AddGas();
+                    AudioManager.Instance.PlaySFX(AudioManager.Instance.JerryCanSfx);
                 }
             }
             StartCoroutine(WaitFire());
@@ -77,6 +78,7 @@ public class RopeLighter : MonoBehaviour
     IEnumerator WaitFire()
     {
         GetComponentInChildren<Animator>().SetTrigger("IsBurning");
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.FireSfx);
         yield return new WaitForSecondsRealtime(0.65f);
         Destroy(this.GameObject());
     }

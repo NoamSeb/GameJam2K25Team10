@@ -21,6 +21,10 @@ public class AudioManager : MonoBehaviour
     [Space]
     [Header("Sfx Audio Clips")]
     public AudioClip konamiValidatedSfx;
+    public AudioClip FireSfx;
+    public AudioClip BombSfx;
+    public AudioClip JerryCanSfx;
+    public AudioClip GasSfx;
 
     private void Awake()
     {
@@ -45,7 +49,7 @@ public class AudioManager : MonoBehaviour
         musicAudioSource.Play();
     }
 
-    private void PlaySFX(AudioClip inAudioClip)
+    public void PlaySFX(AudioClip inAudioClip)
     {
         sfxAudioSource.PlayOneShot(inAudioClip);
     }
