@@ -17,11 +17,9 @@ public class KonamiCode : MonoBehaviour
             if (Input.GetKeyDown(konamiCode[currentIndex]))
             {
                 currentIndex++;
-                Debug.Log("Correct");
 
                 if (currentIndex >= konamiCode.Length)
                 {
-                    Debug.Log("Konami code activated!");
                     DNDOL.Instance.bKonami = true;
                     AudioManager.Instance.sfxAudioSource.PlayOneShot(AudioManager.Instance.konamiValidatedSfx);
                     currentIndex = 0;
@@ -30,7 +28,6 @@ public class KonamiCode : MonoBehaviour
             else
             {
                 currentIndex = 0;
-                Debug.Log("Incorrect");
             }
         }
     }

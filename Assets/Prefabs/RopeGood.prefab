@@ -217,7 +217,7 @@ MonoBehaviour:
   bHasBeenLit: 0
   bIsBeingLit: 0
   life: 0
-  timeBeforeGoingUp: 0.5
+  timeBeforeGoingUp: 0
   fallTime: 2
   fallDistance: -5
 --- !u!114 &452103864307867634
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bHasJerrycan: 0
-  jerrycanSpawnChance: 85
+  jerrycanSpawnChance: 15
   jerrycanSprites:
   - {fileID: 21300000, guid: 4cb2d38a245be634ab0656b16ca829e5, type: 3}
   - {fileID: 21300000, guid: b313df1931298194ca9a80c92add73e7, type: 3}

@@ -27,9 +27,10 @@ public class Lighter : MonoBehaviour
 
     [Header("UI elements")] [SerializeField]
     private GameObject spriteLight2D;
+
     [SerializeField] private GameObject Light2D;
-    [Space]
-    private float _life;
+    [Space] private float _life;
+    public float Life => _life;
     private float _multiplier = 1f;
 
     private int _score = 0;
@@ -38,6 +39,9 @@ public class Lighter : MonoBehaviour
     private int _scoreStreak;
     [SerializeField] private int unlockScoreStreak;
     public bool _isScoreStreakAvailable = false;
+
+    // JerricanGenerator jerricanGenerator = new JerricanGenerator();
+    private bool IsJerrycanChanceIncreased = false;
 
     private void Awake()
     {
@@ -57,7 +61,7 @@ public class Lighter : MonoBehaviour
         _life = initialLife;
         Cursor.visible = false;
         AudioManager.Instance.PlaySFX(AudioManager.Instance.GasSfx);
-        
+
         if (DNDOL.Instance.bKonami)
         {
             Light2D.SetActive(true);
@@ -86,6 +90,24 @@ public class Lighter : MonoBehaviour
 
     private void CheckLife()
     {
+        if (_life > 30f)
+        {
+            if (IsJerrycanChanceIncreased)
+            {
+                IsJerrycanChanceIncreased = false;
+                // JerricanGenerator.Instance.JerrycanSpawnChance -= 10;
+                Debug.Log(JerricanGenerator.Instance.JerrycanSpawnChance);
+            }
+        } 
+        if (_life <= 30f)
+        {
+            if (!IsJerrycanChanceIncreased)
+            {
+                IsJerrycanChanceIncreased = true;
+                JerricanGenerator.Instance.JerrycanSpawnChance += 10;
+                Debug.Log(JerricanGenerator.Instance.JerrycanSpawnChance);
+            }
+        }
         if (_life <= 0f)
         {
             Debug.Log("Game Over !");
@@ -104,7 +126,6 @@ public class Lighter : MonoBehaviour
 
     public void TakeDamage()
     {
-        Debug.Log("Lost some life");
         _life -= damageGasQuantity;
     }
 
