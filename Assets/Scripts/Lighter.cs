@@ -7,7 +7,7 @@ using Debug = UnityEngine.Debug;
 public class Lighter : MonoBehaviour
 {
     public static Lighter Instance;
-
+    
     [Range(50f, 10f)] [SerializeField] private float lerpSpeed = 25f;
     private Vector3 _mousePosition;
 
@@ -28,13 +28,14 @@ public class Lighter : MonoBehaviour
 
     private int _score = 0;
     public int Score => _score;
-
+    
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
         }
         else
         {
@@ -52,7 +53,7 @@ public class Lighter : MonoBehaviour
     void Update()
     {
         UpdateLighterMovement();
-        _multiplier += Time.deltaTime * lifeLossMultiplierProgress;
+        _multiplier += Time.deltaTime*lifeLossMultiplierProgress;
     }
 
     private void UpdateLighterMovement()
@@ -94,4 +95,14 @@ public class Lighter : MonoBehaviour
     {
         _score += burningScore;
     }
+
+    public void AddGas()
+    {
+        _life += gainGasQuantity;
+        if (_life >= 100.0f)
+        {
+            _life = 100.0f;
+        }
+    }
+    
 }

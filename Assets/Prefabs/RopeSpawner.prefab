@@ -51,7 +51,7 @@ MonoBehaviour:
   - {fileID: 3233787209507434160, guid: 37e7c8cfbffeb8347ab22ae40b9b26f8, type: 3}
   - {fileID: 6248408405820543536, guid: 0dddd8d5037b42e4ea73636c51d1eb83, type: 3}
   bIsSpawningRope: 0
-  respawnTime: 0.1
+  respawnTime: 0.6
   goodSpawnChance: 100
   goodRopesSprite:
   - {fileID: 21300000, guid: fbb11fe7ec7608946ab18797e3d618fd, type: 3}

@@ -165,7 +165,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: respawnTime
-      value: 2
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: goodSpawnChance
@@ -181,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9079339822978208003, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9079339822978208003, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_LocalPosition.z
@@ -459,7 +459,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: respawnTime
-      value: 2
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: goodSpawnChance
@@ -475,7 +475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9079339822978208003, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9079339822978208003, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1071,6 +1071,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5788221502011940242, guid: f232af68b7be56e4b90eb70916f9c0b8, type: 3}
+      propertyPath: gainGasQuantity
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5788221502011940242, guid: f232af68b7be56e4b90eb70916f9c0b8, type: 3}
       propertyPath: damageGasQuantity
       value: 10
       objectReference: {fileID: 0}
@@ -1300,7 +1304,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: respawnTime
-      value: 2
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: goodSpawnChance
@@ -1316,7 +1320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9079339822978208003, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9079339822978208003, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1365,7 +1369,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: respawnTime
-      value: 2
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: goodSpawnChance
@@ -1381,7 +1385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9079339822978208003, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9079339822978208003, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1430,7 +1434,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: respawnTime
-      value: 2
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: goodSpawnChance
@@ -1446,7 +1450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9079339822978208003, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9079339822978208003, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1541,7 +1545,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1440489897}
   m_HandleRect: {fileID: 0}
@@ -1659,7 +1663,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: respawnTime
-      value: 2
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: goodSpawnChance
@@ -1675,7 +1679,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9079339822978208003, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9079339822978208003, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1724,7 +1728,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: respawnTime
-      value: 2
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3111124131263068618, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: goodSpawnChance
@@ -1740,7 +1744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9079339822978208003, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9079339822978208003, guid: 79ac994bc902ae141b35cd62fe273299, type: 3}
       propertyPath: m_LocalPosition.z

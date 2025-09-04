@@ -40,6 +40,11 @@ public class RopeLighter : MonoBehaviour
             {
                 Lighter.Instance.AddScore();
                 Debug.Log("Score Increased !");
+
+                if (GetComponent<JerricanGenerator>().bHasJerrycan)
+                {
+                    Lighter.Instance.AddGas();
+                }
             }
             StartCoroutine(WaitFire());
         }
