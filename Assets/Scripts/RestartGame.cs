@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,12 @@ public class RestartGame : MonoBehaviour
     
     public void RestartingGame()
     {
+        DNDOL.Instance.restartedGames += 1;
+        if (DNDOL.Instance.restartedGames == 3)
+        {
+            DNDOL.Instance.bKonami = true;
+        }
+        
         AudioManager.Instance.musicAudioSource.Play();
         SceneManager.LoadScene("Game");
     }
@@ -18,6 +25,9 @@ public class RestartGame : MonoBehaviour
     {
         transitionCanvas = GameObject.FindGameObjectWithTag("TransitionCanvas");
         animator = transitionCanvas.GetComponent<Animator>();
+
+        DNDOL.Instance.restartedGames = 0;
+        DNDOL.Instance.bKonami = false;
         
         StartCoroutine(CLoadLevel("MainMenu"));
     }
@@ -41,5 +51,19 @@ public class RestartGame : MonoBehaviour
     public void LoadLevel(string levelToLoad)
     {
         StartCoroutine(CLoadLevel(levelToLoad));
+    }
+
+    private void Start()
+    {
+        if (DNDOL.Instance.bKonami)
+        {
+            AudioManager.Instance.musicAudioSource.clip = AudioManager.Instance.konamiMusic;
+            AudioManager.Instance.musicAudioSource.Play();
+        }
+        else
+        {
+            AudioManager.Instance.musicAudioSource.clip = AudioManager.Instance.gameplayMusic;
+            AudioManager.Instance.musicAudioSource.Play();
+        }
     }
 }
