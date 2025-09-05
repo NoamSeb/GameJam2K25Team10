@@ -1470,7 +1470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5788221502011940242, guid: f232af68b7be56e4b90eb70916f9c0b8, type: 3}
       propertyPath: unlockScoreStreak
-      value: 2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5788221502011940242, guid: f232af68b7be56e4b90eb70916f9c0b8, type: 3}
       propertyPath: JerrycanAbilityCanvas
