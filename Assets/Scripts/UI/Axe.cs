@@ -12,7 +12,7 @@ public class Axe : MonoBehaviour
 
     private void Update()
     {
-        if (Lighter.Instance._isScoreStreakAvailable)
+        if (Lighter.Instance._isAxeScoreStreakAvailable)
         {
             axeImage.SetActive(true);
         }
