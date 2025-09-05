@@ -143,6 +143,7 @@ MonoBehaviour:
   spriteLight2D: {fileID: 7233851925575656188}
   Light2D: {fileID: 1171304910313106591}
   unlockScoreStreak: 0
+  JerrycanAbilityCanvas: {fileID: 0}
   _isScoreStreakAvailable: 0
 --- !u!1 &7233851925575656188
 GameObject:
