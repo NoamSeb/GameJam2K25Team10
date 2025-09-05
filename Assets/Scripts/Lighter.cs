@@ -153,6 +153,9 @@ public class Lighter : MonoBehaviour
             Debug.Log("Game Over !");
             deathCanvas.gameObject.SetActive(true);
             Cursor.visible = true;
+            GameObject restartCanvas = GameObject.FindGameObjectWithTag("RestartCanvas");
+            Animator animRestartCanvas = restartCanvas.GetComponent<Animator>();
+            animRestartCanvas.SetTrigger("Death");
             Destroy(gameObject);
         }
     }

@@ -11,6 +11,7 @@ TagManager:
   - RopeBad
   - MusicSource
   - SfxSource
+  - RestartCanvas
   layers:
   - Default
   - TransparentFX
