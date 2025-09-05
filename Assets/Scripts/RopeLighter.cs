@@ -76,10 +76,10 @@ public class RopeLighter : MonoBehaviour
     IEnumerator WaitFire()
     {
         float waitTime = 0.65f;
-        // if (GetComponent<BombGenerator>())
-        // {
-        //     waitTime = GetComponent<BombGenerator>().bHasBomb ? 0.85f : 0.65f;
-        // }
+        if (GetComponent<BombGenerator>())
+        {
+            waitTime = GetComponent<BombGenerator>().bHasBomb ? 0.85f : 0.65f;
+        }
         
         if (GetComponent<BombGenerator>() && GetComponent<BombGenerator>().bHasBomb)
         {
