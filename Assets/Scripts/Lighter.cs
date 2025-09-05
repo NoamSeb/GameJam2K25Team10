@@ -36,13 +36,16 @@ public class Lighter : MonoBehaviour
     private int _score = 0;
     public int Score => _score;
 
-    private int _scoreStreak;
-    [SerializeField] private int unlockScoreStreak;
+    private int _axeScoreStreak;
+    private int _jerrycanScoreStreak;
+    [SerializeField] private int unlockAxeScoreStreak;
+    [SerializeField] private int unlockJerrycanScoreStreak;
+    [SerializeField] private GameObject AxeAbilityCanvas;
     [SerializeField] private GameObject JerrycanAbilityCanvas;
-    public bool _isScoreStreakAvailable = false;
+    public bool _isAxeScoreStreakAvailable = false;
+    private bool _isJerrycanAbilityAvailable = false;
 
     private bool IsJerrycanChanceIncreased = false;
-    private bool IsJerrycanAbilityAvailable = true;
 
     private void Awake()
     {
@@ -77,7 +80,7 @@ public class Lighter : MonoBehaviour
         _multiplier += Time.deltaTime * lifeLossMultiplierProgress;
         if (Input.GetMouseButtonDown(0))
         {
-            StartCoroutine(UseGasAbility());
+            UseGasAbility();
         }
 
         if (Input.GetMouseButtonDown(1))
@@ -85,7 +88,24 @@ public class Lighter : MonoBehaviour
             UseScoreStreak();
         }
 
-        if (IsJerrycanAbilityAvailable)
+        #region Abilities
+
+        #region Axe
+
+        if (_isAxeScoreStreakAvailable)
+        {
+            AxeAbilityCanvas.SetActive(true);
+        }
+        else
+        {
+            AxeAbilityCanvas.SetActive(false);
+        }
+
+        #endregion
+
+        #region Jerrycan
+
+        if (_isJerrycanAbilityAvailable)
         {
             JerrycanAbilityCanvas.SetActive(true);
         }
@@ -93,6 +113,10 @@ public class Lighter : MonoBehaviour
         {
             JerrycanAbilityCanvas.SetActive(false);
         }
+
+        #endregion
+
+        #endregion
     }
 
     private void UpdateLighterMovement()
@@ -159,47 +183,68 @@ public class Lighter : MonoBehaviour
         }
     }
 
+    #region Special Ability
+
+    public void AddSpecialGas()
+    {
+        _life += gainGasQuantity * 2;
+        if (_life >= 100.0f)
+        {
+            _life = 100.0f;
+        }
+    }
+
     public void AddScoreStreak()
     {
-        _scoreStreak++;
-        if (_scoreStreak >= unlockScoreStreak)
-            _isScoreStreakAvailable = true;
+        _axeScoreStreak++;
+        _jerrycanScoreStreak++;
+        
+        if (_axeScoreStreak >= unlockAxeScoreStreak)
+            _isAxeScoreStreakAvailable = true;
+
+        if (_jerrycanScoreStreak >= unlockJerrycanScoreStreak)
+            _isJerrycanAbilityAvailable = true;
     }
 
     public void ResetScoreStreak()
     {
-        _scoreStreak = 0;
+        _axeScoreStreak = 0;
+        _jerrycanScoreStreak = 0;
     }
 
     private void UseScoreStreak()
     {
-        animator.SetTrigger("Slash");
-        AudioManager.Instance.PlaySFX(AudioManager.Instance.SlashSfx);
-        ResetScoreStreak();
-        _isScoreStreakAvailable = false;
-
-        GameObject[] badRopesToKill = GameObject.FindGameObjectsWithTag("RopeBad");
-        GameObject[] goodRopesToKill = GameObject.FindGameObjectsWithTag("RopeGood");
-
-        foreach (GameObject badRope in badRopesToKill)
+        if (_isAxeScoreStreakAvailable)
         {
-            Destroy(badRope);
-        }
+            AxeAnim.Instance.Slash();
+            _isAxeScoreStreakAvailable = false;
+            _axeScoreStreak = 0;
 
-        foreach (GameObject goodRope in goodRopesToKill)
-        {
-            Destroy(goodRope);
+            GameObject[] badRopesToKill = GameObject.FindGameObjectsWithTag("RopeBad");
+            GameObject[] goodRopesToKill = GameObject.FindGameObjectsWithTag("RopeGood");
+
+            foreach (GameObject badRope in badRopesToKill)
+            {
+                Destroy(badRope);
+            }
+
+            foreach (GameObject goodRope in goodRopesToKill)
+            {
+                Destroy(goodRope);
+            }
         }
     }
 
-    private IEnumerator UseGasAbility()
+    private void UseGasAbility()
     {
-        if (IsJerrycanAbilityAvailable)
+        if (_isJerrycanAbilityAvailable)
         {
-            AddGas();
-            IsJerrycanAbilityAvailable = false;
-            yield return new WaitForSeconds(20f);
-            IsJerrycanAbilityAvailable = true;
+            _isAxeScoreStreakAvailable = false;
+            AddSpecialGas();
+            _isJerrycanAbilityAvailable = false;
+            _jerrycanScoreStreak = 0;
         }
     }
+
+    #endregion
 }
