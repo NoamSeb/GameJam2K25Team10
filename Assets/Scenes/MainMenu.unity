@@ -1392,6 +1392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bKonami: 0
+  restartedGames: 0
 --- !u!1 &1432518426
 GameObject:
   m_ObjectHideFlags: 0
