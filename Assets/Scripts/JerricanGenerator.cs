@@ -39,6 +39,4 @@ public class JerricanGenerator : MonoBehaviour
 
         GetComponent<SpriteRenderer>().sprite = jerrycanSprites[Random.Range(0, jerrycanSprites.Length)];
     }
-    
-    
 }
